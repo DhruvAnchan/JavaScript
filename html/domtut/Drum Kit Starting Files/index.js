@@ -9,13 +9,16 @@ const sounds = [
   new Audio("sounds/snare.mp3")
 ];
 
-/* for(let i = 0; i<num; i++){
-    document.querySelectorAll("button")[i].addEventListener("click", function () {
-        sounds[i].play();
+for(let i = 0; i<num; i++){
+    document.querySelectorAll("button")[i].addEventListener("click", function (event) {
+        var buttonInnerHTML = this.innerHTML;
+        makeSound(buttonInnerHTML);
+        buttonAnimation(buttonInnerHTML);
     });
-} */
+}
 document.addEventListener("keydown",function(event){
     makeSound(event.key);
+    buttonAnimation(event.key);
 })
 function makeSound(key){
     switch(key){
@@ -41,8 +44,14 @@ function makeSound(key){
             sounds[6].play();
             break;
         default:
-            console.log("wrong key "+event.key+" was pressed");
-            console.log(typeof(event.key)+":"+event.key);
+            console.log(buttonInnerHTML);
             break;
     }
+}
+function buttonAnimation(currentKey){
+    var activebutton = document.querySelector("."+currentKey)
+    activebutton.classList.add("pressed");
+    setTimeout(function(){
+        activebutton.classList.remove("pressed");
+    },1000);
 }
