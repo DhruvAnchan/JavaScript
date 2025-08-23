@@ -1,0 +1,31 @@
+body{
+    background-color: #0A400C;
+}
+h3{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: #FEFAE0;
+}
+#text{
+    text-align:center;
+    width: 400px;
+    height: 200px;
+    background-color: #B1AB86;
+    border-radius: 10%;
+}
+#butt{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: #FEFAE0;
+    background-color: #819067;
+    width: 90px;
+    height: 30px;
+    border-radius: 20%;
+}
+.highlight {
+    display: none;
+    background-color: #819067; /* The highlight color */
+    color: #FEFAE0;             /* Optional: text color for contrast */
+    padding: 3px 5px;          /* Adds space around the text */
+    border-radius: 5px;        /* Creates rounded corners, making it a "shape" */
+}

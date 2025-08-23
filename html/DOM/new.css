@@ -1,0 +1,13 @@
+body{
+    background-color: antiquewhite;
+    cursor: crosshair;
+}
+#ul{
+    color: rgba(152, 101, 101, 0.803);
+}
+#button{
+    background-color: burlywood;
+}
+.hider{
+    visibility: hidden;
+}
