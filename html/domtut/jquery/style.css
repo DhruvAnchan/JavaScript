@@ -1,0 +1,12 @@
+body{
+    background-color: beige;
+}
+#cat{
+    width: 10%;
+    height: auto;
+}
+.big-title{
+    size: 10rem;
+    font-style: italic;
+    font-family: cursive;
+}

@@ -12,6 +12,7 @@ const sounds = [
 for(let i = 0; i<num; i++){
     document.querySelectorAll("button")[i].addEventListener("click", function (event) {
         var buttonInnerHTML = this.innerHTML;
+        
         makeSound(buttonInnerHTML);
         buttonAnimation(buttonInnerHTML);
     });
@@ -50,8 +51,10 @@ function makeSound(key){
 }
 function buttonAnimation(currentKey){
     var activebutton = document.querySelector("."+currentKey)
+
     activebutton.classList.add("pressed");
+
     setTimeout(function(){
         activebutton.classList.remove("pressed");
-    },1000);
+    },100);
 }
