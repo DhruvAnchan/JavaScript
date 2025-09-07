@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Taco Recipes</title>
+  <link rel="stylesheet" type="text/css" href="/styles/main.css">
+</head>
+
+<body>
+  <h1>Taco Town 🌮</h1>
+
+  <form action="/recipe" method="POST" class="buttons">
+    <button type="submit" value="chicken" name="choice">🍗</button>
+    <button type="submit" value="beef" name="choice">🥩</button>
+    <button type="submit" value="fish" name="choice">🐟</button>
+  </form>
+  <div id="recipeContainer" class="hidden">
+    <% if(locals.sentRecipe){ %>
+      <% var prot = sentRecipe.ingredients.protein;var sals = sentRecipe.ingredients.salsa; var topp = sentRecipe.ingredients.toppings %>
+      
+      <!-- Else, show the recipe name e.g. <h2>Recipe name</h2>-->
+       <h1>Recipe Name: <%= sentRecipe.name %></h1>
+
+      <h3>Ingredients:</h3>
+      <ul id="ingredientsList">
+
+        <li>Protein name: <%= prot.name %>, protein preparation: <%= prot.preparation %></li>
+
+        <li>Salsa name: <%= sals.name %>, Spiciness: <%= sentRecipe.ingredients.salsa.spiciness %></li>
+        
+        <li>Every other topping: 
+          <% for(let j = 0; j<topp.length; j++){ %>
+            <li><%= topp[j].name %>: <%=topp[j].quantity%></li>
+          <% } %>
+        </li>
+
+      </ul>
+
+    <% } else { %>
+      <!-- If no recipe yet, show: -->
+      <h2>Pick your favourite taco ingredient 👆</h2>
+    <% } %>
+
+  </div>
+</body>
+
+</html>
